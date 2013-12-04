@@ -58,11 +58,7 @@ function actualiza_informacion(tabla, url)
                     dataType : 'json',
                     error: function() 
 					       { 
-						    $.Zebra_Dialog('<strong>El catálogo de datos '+tabla+' no se encuentra disponible. Intente más tarde!</strong>', 
-							{
-							'type':     'error',
-							'title':    'Actualización de Información'
-							});
+						    alert('El catálogo de datos '+tabla+' no se encuentra disponible. Intente más tarde!'); 
 						   }
                 });
 
