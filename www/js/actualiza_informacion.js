@@ -62,6 +62,7 @@ function actualiza_informacion(tabla, url)
 							actualiza_progressbar('0%','0%');
 							$('div.navigation').unblock();
 							document.getElementById("actualiza").value="0";
+							navigator.app.exitApp();
 						   }
                 });
 
