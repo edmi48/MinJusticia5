@@ -308,42 +308,29 @@ function abrir_twitter()
 		 return conexion;
         }
 		
-	function reubicar()
-	{	
-//Verifica si el Flag de actualización está activo
-	 if (document.getElementById("actualiza").value == "1")
-	 {
-//Determina la imagen a visualizar	 
-	  if ($(window).width() < $(window).height()) {
+		function reubicar(){				
+		alert("actualiza "+document.getElementById("actualiza").value);
+	if (document.getElementById("actualiza").value == "1")
+	{
+	 if ($(window).width() < $(window).height()) {
 		document.getElementById("bg").src="images/fondo.png";		
-	  }
-	  else {
-		document.getElementById("bg").src="images/fondo_ancho.png";
-	  }
-//Presenta tanto el DIV como la imagen al 100% mientras actualiza en el caso que se gire el dispositivo
-	  $(navigata).height("100%");
-	  $(bg).height("100%");
-//Determina si existe el elemento carrusel para ocultarlo
-	  if ($('#divCarousel').length) $(divCarousel).hide();
-	  else
-	  {
-//De no existir el elemento carrusel, se asume la existencia de los iconos los cuales se ocultan	  
-	   $(opcion1).hide();
-	   $(opcion2).hide();
-	   $(opcion3).hide();
-	   $(opcion4).hide();
-	   $(opcion5).hide();
-	   $(opcion6).hide();
-	  }
 	 }
-	 else window.location.reload();
-    }
+	 else {
+		document.getElementById("bg").src="images/fondo_ancho.png";
+	 }
+
+	 $(navigata).height("100%");
+	 $(bg).height("100%");
+		}
+	else window.location.reload();
+	}
 
      </script>	 		
 
 </head>
-<body onresize="reubicar();" onload="inicializa_db(checkConnection());"> 
-<!-- <body onresize="reubicar();" > --> 
+<!-- <body onresize="reubicar();" onload="inicializa_db(checkConnection());"> -->
+ <body onresize="reubicar();" onload="inicializa_db(checkConnection());"> 
+<!--<body onresize="reubicar();" onload="alert('Entra')">  -->
 		<script> 
 		document.write('<div class="meter nostripes" id="progressbar" width="90%" top="100px">');
 		document.write('</div>');
@@ -435,7 +422,7 @@ function abrir_twitter()
 
         <script type="text/javascript" src="js/actualiza_informacion.js"></script>
         <script type="text/javascript" src="js/base_datos.js"></script>
-	<input id="actualiza" type="hidden" value="0">	
+	<input id="actualiza" type="text">	
     </div>	
 </body>
 </html>
