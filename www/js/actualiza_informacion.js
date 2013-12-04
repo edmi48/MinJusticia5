@@ -59,6 +59,9 @@ function actualiza_informacion(tabla, url)
                     error: function() 
 					       { 
 						    alert('El catálogo de datos '+tabla+' no se encuentra disponible. Intente más tarde!'); 
+							actualiza_progressbar('0%','0%');
+							$('div.navigation').unblock();
+							document.getElementById("actualiza").value="0";
 						   }
                 });
 
